@@ -80,4 +80,11 @@ export const ContactsData: Contacts[] = [
     email: "zendaya.coleman@example.com",
     country: { code: "US", name: getCountryNameByCode("US") },
   },
+  {
+    id: uuidv4(),
+    firstName: "Ermira",
+    lastName: "Coleman",
+    email: "ermira@example.com",
+    country: { code: "US", name: getCountryNameByCode("US") },
+  },
 ];
