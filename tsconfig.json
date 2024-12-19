@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["jest", "node"]  
+    "types": ["jest", "node"]  ,
+    "outDir": "./dist" 
   },
   "include": ["src/**/*","jest.setup.ts"],
   "exclude": ["node_modules"]
