@@ -1,58 +1,48 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Run the Project
 
-Currently, two official plugins are available:
+Clone the Repository
+bash
+Copy code
+git clone <repository-url>
+Navigate to the Project Directory
+bash
+Copy code
+cd javascript-challenge
+Install Dependencies
+bash
+Copy code
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Start the Development Server
+bash
+Copy code
+npm run dev
+The application will run on http://localhost:3000.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Run Tests
+bash
+Copy code
+npm run test
+Build for Production
+bash
+Copy code
+npm run build
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Node.js Version Requirement
+
+> **Important:** This project requires the **latest version of Node.js**.  
+> Older Node.js versions, such as Node.js 12 or 14, will cause compatibility issues with tests and builds.
+
+To ensure compatibility, use **Node.js version 20 or higher**.
+
+To check your current Node.js version, run:
+
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+node -v
 ```
-# Client Side Address Book (JavaScript Challenge)
-
-This is a Single Page Application (SPA) for managing an address book, built using **React**, **TypeScript**, **Vite**, and **TailwindCSS**. The app allows users to add, edit, delete, and view contacts, with client-side persistence.
-
----
 
 ## Features
 
@@ -69,33 +59,26 @@ This is a Single Page Application (SPA) for managing an address book, built usin
 
 ---
 
-## Folder Structure
+## Project Dependencies
 
-```plaintext
-src/
-├── components/              # Reusable UI components
-│   ├── AddContactForm.tsx
-│   ├── Button.tsx
-│   ├── ContactForm.tsx
-│   ├── ContactList.tsx
-│   ├── DeleteConfirmationModal.tsx
-│   ├── EditContact.tsx
-│   ├── Input.tsx
-│   ├── Label.tsx
-│   ├── Modal.tsx
-│   ├── Select.tsx
-│   └── Table.tsx
-├── data/                    # Mock data and utilities
-│   ├── mockContacts.ts
-│   └── util.ts
-├── hooks/                   # Custom React hooks
-│   ├── useContacts.ts
-│   └── useCountryOptions.ts
-├── interfaces/              # TypeScript interfaces
-│   └── contactTypes.ts
-├── pages/                   # Application pages
-│   ├── EditContactPage.tsx
-│   └── HomePage.tsx
-├── schemas/                 # Validation schemas
-│   └── contactSchema.ts
-└── App.tsx                  # Main application entry
+This project uses the following libraries and tools:
+
+### Core Libraries
+- **React** (`react`, `react-dom`) - For building the user interface.
+- **React Router DOM** (`react-router-dom`) - For managing application routing.
+- **React Hook Form** (`react-hook-form`, `@hookform/resolvers`) - For managing form state and validation.
+- **Zod** (`zod`) - For schema validation and error handling.
+- **UUID** (`uuid`) - For generating unique IDs.
+- **Country List** (`country-list`) - For retrieving a list of countries.
+
+### Development and Testing
+- **TypeScript** (`typescript`, `@types/...`) - For type safety in JavaScript code.
+- **Vite** (`vite`, `vite-tsconfig-paths`) - Development server and build tool.
+- **Jest** (`jest`, `jest-environment-jsdom`, `ts-jest`) - Unit testing framework.
+- **Testing Library** (`@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`) - Utilities for testing React components.
+- **ESLint** (`eslint`, `@eslint/js`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`) - For linting and enforcing coding standards.
+- **Sass** (`sass`) - For styling with CSS preprocessing.
+- **Vitest** (`vitest`) - Alternative testing library for specific use cases.
+
+---
+
