@@ -36,9 +36,9 @@ export const Select = <TFormValues extends FieldValues>({
         <option value="" className="text-gray-500">
           Select a country
         </option>
-        {countryOptions.map((country: CountryOption) => (
+        {countryOptions.map((country: CountryOption,index) => (
           <option
-            key={country.value}
+            key={index}
             value={country.value}
             className="text-gray-300"
           >
