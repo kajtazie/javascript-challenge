@@ -3,7 +3,7 @@ import { z } from "zod";
 import { useContacts } from "../hooks/useContacts";
 import { useState } from "react";
 import useCountryOptions from "../hooks/useCountryOptions";
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "./ContactForm/ContactForm";
 
 type FormData = z.infer<typeof contactSchema>;
 

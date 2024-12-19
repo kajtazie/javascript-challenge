@@ -1,6 +1,7 @@
 import { EditContact } from "../components/EditContact";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContacts } from "../hooks/useContacts";
+import { Button } from "../components/Button/Button";
 
 export const EditContactPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -9,22 +10,28 @@ export const EditContactPage = () => {
 
   const contactToEdit = contacts.find((contact) => contact.id === id);
 
-  if (!contactToEdit) {
-    return (
-      <div className="text-center text-red-500">
-        <p>Contact not found.</p>
-        <button
-          onClick={() => navigate("/")}
-          className="text-blue-400 hover:text-white border border-blue-400 px-4 py-2 rounded hover:bg-blue-400 transition-all duration-200"
-        >
-          Back to Contacts
-        </button>
-      </div>
-    );
-  }
   return (
-    <section className="min-h-screen flex items-center justify-center fixed inset-0  bg-gray-900">
-      <EditContact contact={contactToEdit} />
+    <section className="edit-contact-page">
+      <Button
+        variant="primary"
+        onClick={() => navigate("/")}
+        className="back-button"
+      >
+        Back
+      </Button>
+
+      {!contactToEdit ? (
+        <div className="text-center">
+          <p>Contact not found.</p>
+        </div>
+      ) : (
+        <>
+          <div className="edit-container">
+            <h1 className="contact-list__title">Edit Contact</h1>
+            <EditContact contact={contactToEdit} />
+          </div>
+        </>
+      )}
     </section>
   );
 };

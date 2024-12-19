@@ -1,0 +1,76 @@
+$bg-dark: #1a202c;
+$text-light: #f7fafc;
+$text-error: #f56565;
+$spacing-base: 1rem;
+$spacing-large: 4rem;
+$form-success-text: #10b981;
+$form-success-bg: #d1fae5;
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Main container styling */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $bg-dark;
+}
+
+/* Edit contact page styling */
+.edit-contact-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: $bg-dark;
+  width: 100%;
+  justify-content: center; 
+  align-items: center;
+
+  .back-button {
+    position: absolute;
+    top: $spacing-base;
+    left: $spacing-base;
+  }
+
+  .edit-container {
+    padding-top: $spacing-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto; 
+    max-width: 800px; 
+    margin: 0 auto;
+  }
+
+  .contact-list__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-light;
+    margin-bottom: $spacing-base * 2;
+  }
+
+  .text-center {
+    margin-top: $spacing-large;
+    color: $text-error;
+  }
+}
+
+.success-message {
+  background-color: $form-success-bg;
+  color: $form-success-text;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}

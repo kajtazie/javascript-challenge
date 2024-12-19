@@ -1,0 +1,42 @@
+$form-bg-color: #2d3748;
+$form-text-color: #e2e8f0;
+$form-border-radius: 1rem;
+$form-padding: 1rem;
+$form-error-bg: #fee2e2;
+$form-error-text: #e11d48;
+$form-button-disable-bg: #e2e8f0;
+$form-button-disable-text: #a0aec0;
+
+.contact-form {
+  padding: $form-padding;
+  background-color: $form-bg-color;
+  border-radius: $form-border-radius;
+  color: $form-text-color;
+  width: 500px;
+ 
+
+  .error-message {
+    background-color: $form-error-bg;
+    color: $form-error-text;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-input {
+    margin-bottom: 1rem;
+  }
+
+  .form-select {
+    margin-bottom: 1rem;
+  }
+
+  .form-button {
+    margin-top: 1rem;
+    &:disabled {
+      background-color: $form-button-disable-bg;
+      color: $form-button-disable-text;
+      cursor: not-allowed;
+    }
+  }
+}

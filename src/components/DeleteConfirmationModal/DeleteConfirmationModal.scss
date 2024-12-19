@@ -1,0 +1,44 @@
+// SCSS Variables
+$bg-dark: #1a202c;
+$bg-light: #f7fafc;
+$text-light: #f7fafc;
+$spacing-base: 1rem;
+$spacing-medium: 1.5rem;
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Modal Styles
+.p-8 {
+  padding: $spacing-base;
+}
+
+h2 {
+  @include flex-center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: $spacing-medium;
+  color: $text-light;
+  text-align: center;
+}
+
+.flex {
+  @include flex-center;
+  gap: $spacing-base;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pb-6 {
+  padding-bottom: $spacing-medium;
+}
+
+.space-x-4 {
+  gap: $spacing-base;
+}

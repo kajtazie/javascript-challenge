@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormLabel } from "./Label";
-import { FormInput } from "./Input";
-import { Select } from "./Select";
-import { Button } from "./Button";
-import { contactSchema } from "../schemas/contactSchema";
-import useCountryOptions from "../hooks/useCountryOptions";
-import { formInputs } from "../data/util";
+
 import { z } from "zod";
+import './ContactForm.scss'; 
+import { contactSchema } from "../../schemas/contactSchema";
+import useCountryOptions from "../../hooks/useCountryOptions";
+import { formInputs } from "../../data/util";
+import { FormLabel } from "../Label/Label";
+import { FormInput } from "../Input/Input";
+import { Select } from "../Select/Select";
+import { Button } from "../Button/Button";
 
 interface CommonFormProps {
   initialValues?: Partial<FormData>;
@@ -49,17 +51,17 @@ export const ContactForm: React.FC<CommonFormProps> = ({
   }, [initialValues, reset]);
 
   return (
-    <div className="p-4 text-gray-300 bg-gray-800 rounded-xl">
+    <div className="contact-form">
       {/* Error Message */}
       {errorMessage && (
-        <div className="mb-4 p-2 text-sm text-red-600 bg-red-100 rounded">
+        <div className="error-message">
           {errorMessage}
         </div>
       )}
 
       {/* Success Message */}
       {successMessage && (
-        <div className="mb-4 p-2 text-sm text-green-600 bg-green-100 rounded">
+        <div className="success-message">
           {successMessage}
         </div>
       )}
@@ -73,7 +75,7 @@ export const ContactForm: React.FC<CommonFormProps> = ({
         ))}
 
         {/* Country */}
-        <div className="mb-4">
+        <div className="form-select">
           <Select
             id="country"
             register={register}
@@ -84,7 +86,7 @@ export const ContactForm: React.FC<CommonFormProps> = ({
           />
         </div>
 
-        <Button type="submit" variant="submit" disabled={!isDirty || !isValid}>
+        <Button type="submit" variant="submit" disabled={!isDirty || !isValid} className="form-button">
           {submitButtonLabel}
         </Button>
       </form>

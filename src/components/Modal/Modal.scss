@@ -1,0 +1,54 @@
+$modal-overlay-bg: rgba(0, 0, 0, 0.5);
+$modal-bg: #2d3748;
+$modal-text-color: #e2e8f0;
+$modal-close-btn-color: $modal-text-color;
+$modal-close-btn-hover-color: #edf2f7;
+$modal-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// SCSS Mixin for the modal box
+@mixin modal-box {
+  background-color: $modal-bg;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  box-shadow: $modal-box-shadow;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $modal-overlay-bg;
+}
+
+.modal-content {
+  @include modal-box;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-close-btn {
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center;
+}

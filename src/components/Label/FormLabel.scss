@@ -1,0 +1,19 @@
+$form-label-color: #e2e8f0;
+$error-text-color: #f87171;
+
+.form-label-container {
+  margin-bottom: 1rem;
+
+  .form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $form-label-color;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    color: $error-text-color;
+    margin-top: 0.25rem;
+  }
+}

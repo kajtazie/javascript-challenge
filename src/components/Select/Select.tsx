@@ -4,11 +4,12 @@ import {
   FieldValues,
   Path,
 } from "react-hook-form";
-import { FormLabel } from "./Label";
-import { CountryOption } from "../interfaces/contacts.types";
+import { FormLabel } from "../Label/Label";
+import { CountryOption } from "../../interfaces/contacts.types";
+import "./Select.scss";
 
 interface SelectProps<TFormValues extends FieldValues> {
-  id: Path<TFormValues>; 
+  id: Path<TFormValues>;
   register: UseFormRegister<TFormValues>;
   errors?: FieldErrors<TFormValues>;
   countryOptions: CountryOption[];
@@ -25,12 +26,12 @@ export const Select = <TFormValues extends FieldValues>({
   required = false,
 }: SelectProps<TFormValues>) => {
   return (
-    <div className="mb-4">
-      <FormLabel htmlFor="country">Country</FormLabel>
+    <div className="select-container">
+      <FormLabel htmlFor={id}>{label}</FormLabel>
       <select
         id={id}
         {...register(id, { required: required && `${label} is required` })}
-        className="w-full px-3 py-2 border border-gray-700 bg-gray-900 text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="select-element"
       >
         <option value="" className="text-gray-500">
           Select a country
@@ -46,9 +47,7 @@ export const Select = <TFormValues extends FieldValues>({
         ))}
       </select>
       {errors?.[id] && (
-        <p className="text-red-400 text-xs mt-1">
-          {errors[id]?.message as string}
-        </p>
+        <p className="error-message">{errors[id]?.message as string}</p>
       )}
     </div>
   );

@@ -1,0 +1,152 @@
+/* src/components/Table.scss */
+
+// Variables
+$bg-dark: #2d3748;
+$bg-hover: #4a5568;
+$bg-light: #edf2f7;
+$color-light: #e2e8f0;
+$color-blue: #63b3ed;
+$transition-speed: 0.2s;
+
+// Table container
+.table-container {
+  overflow-x: auto;
+}
+
+// Table styles
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $bg-dark;
+
+  // Table header
+  th {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background-color: $bg-dark;
+    color: $bg-light;
+    border-bottom: 1px solid $bg-dark;
+  }
+
+  // Table body rows
+  tbody {
+    tr {
+      border-top: 1px solid $bg-dark;
+      border-bottom: 1px solid $bg-dark;
+
+      &:hover {
+        background-color: $bg-hover;
+        transition: background-color $transition-speed ease;
+      }
+    }
+  }
+
+  // Table cell styles
+  td {
+    padding: 0.5rem 1rem;
+    color: $color-light;
+    text-transform: capitalize;
+
+    &.truncate {
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  // Action buttons container
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  // Link styles (Edit button)
+  .edit-link {
+    color: $color-blue;
+    border: 1px solid $color-blue;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: all $transition-speed ease;
+    font-size: 14px;
+
+    &:hover {
+      color: #fff;
+      background-color: $color-blue;
+      border-color: $color-blue;
+    }
+  }
+}
+
+
+/* RESPONSIVE STYLES */
+
+/* For small devices (mobile) */
+@media (max-width: 767px) {
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+
+  /* Stack the table headers above the rows */
+  .table thead {
+    display: none;
+  }
+
+  .table td {
+    display: block;
+    width: 100%;
+    text-align: right;
+    border-bottom: 1px solid #2d3748;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  .table .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .table .edit-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* For medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+  }
+
+  .table .actions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .table .edit-link {
+    width: auto;
+  }
+}
+
+/* For large devices (desktops) */
+@media (min-width: 1025px) {
+  .table th,
+  .table td {
+    padding: 1rem;
+  }
+
+  .table .actions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

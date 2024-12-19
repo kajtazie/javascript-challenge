@@ -1,4 +1,5 @@
-import { Button } from "./Button";
+import { Button } from "../Button/Button";
+import "./DeleteConfirmationModal.scss";
 
 export const DeleteConfirmationModal = ({
   contactId,
@@ -9,6 +10,7 @@ export const DeleteConfirmationModal = ({
   onDelete: (id: string) => void;
   onClose: () => void;
 }) => {
+  
   return (
     <div className="p-8">
       <h2 className="pb-6 text-center">

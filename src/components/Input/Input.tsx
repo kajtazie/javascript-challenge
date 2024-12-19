@@ -1,3 +1,5 @@
+import './FormInput.scss'; 
+
 interface FormInputProps {
   id: string;
   type: string;
@@ -14,17 +16,15 @@ export const FormInput = ({
   placeholder,
 }: FormInputProps) => {
   return (
-    <div className="mb-4">
+    <div className="form-input-container">
       <input
         id={id}
         type={type}
         {...register(id)}
         placeholder={placeholder}
-        className="w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="form-input"
       />
-      {errorMessage && (
-        <p className="text-red-500 text-xs mt-1">{errorMessage}</p>
-      )}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };

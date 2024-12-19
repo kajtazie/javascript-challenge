@@ -1,0 +1,35 @@
+// Variables
+$color-light: #f7fafc;
+$color-white: #ffffff;
+$padding-top: 5rem;
+$font-size-title: 1.875rem;
+$font-weight-title: 600;
+$margin-bottom: 1rem;
+$margin-top-table: 2rem;
+
+// Contact List Styles
+.contact-list {
+  padding-top: $padding-top;
+  min-height: 100vh;
+  color: $color-white;
+
+  // Header styles
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $margin-bottom;
+  }
+
+  // Title styles
+  &__title {
+    font-size: $font-size-title;
+    font-weight: $font-weight-title;
+    color: $color-light;
+  }
+
+  // Table container styles
+  &__table {
+    margin-top: $margin-top-table;
+  }
+}

@@ -1,4 +1,5 @@
-import { ContactList } from "../components/ContactList";
+import { ContactList } from "../components/ContactList/ContactList";
+
 
 export const Homepage = () => {
   return (

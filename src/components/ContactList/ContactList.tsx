@@ -1,11 +1,15 @@
 import { JSX, useState } from "react";
-import { useContacts } from "../hooks/useContacts";
-import { Button } from "./Button";
-import { Modal } from "./Modal";
 
-import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
-import { Table } from "./Table";
-import { AddContactForm } from "./AddContactForm";
+import "./ContactList.scss";
+import { Modal } from "../Modal/Modal";
+import { DeleteConfirmationModal } from "../DeleteConfirmationModal/DeleteConfirmationModal";
+import { AddContactForm } from "../AddContactForm";
+import { Button } from "../Button/Button";
+import { useContacts } from "../../hooks/useContacts";
+import { Table } from "../Table/Table";
+
+
+
 export const ContactList = () => {
   const { contacts, deleteContact, addContact } = useContacts();
   const [activeModal, setActiveModal] = useState<{
@@ -41,15 +45,21 @@ export const ContactList = () => {
     ),
   };
   return (
-    <div className="pt-20 min-h-screen text-white">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-semibold text-gray-100">Contact List</h1>
-        <Button onClick={openAddModal} variant="primary">
+    <div className="contact-list">
+      <div className="contact-list__header">
+        <h1 className="contact-list__title">Contact List</h1>
+        <Button
+          onClick={openAddModal}
+          variant="primary"
+        >
           Add Contact
         </Button>
       </div>
+
       {/* Table Component */}
-      <Table data={contacts} onDelete={openDeleteModal} />
+      <div className="contact-list__table">
+        <Table data={contacts} onDelete={openDeleteModal} />
+      </div>
 
       {/* Modals */}
       {activeModal.type && modal[activeModal.type]}

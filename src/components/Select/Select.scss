@@ -1,0 +1,51 @@
+
+// SCSS Variables
+$border-color: #4a5568;
+$bg-color: #1a202c;
+$text-color: #e2e8f0;
+$focus-ring-color: #63b3ed;
+$error-color: #f56565;
+$placeholder-color: #e2e8f0;
+
+// Select Component Styles
+.select-container {
+  margin-bottom: 1rem;
+
+  .select-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  .select-element {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid $border-color;
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+    
+    &:focus {
+      border-color: $focus-ring-color;
+      background-color: $bg-color;
+      ring: 2px solid $focus-ring-color;
+    }
+
+    option {
+      color: $text-color;
+    }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    color: $error-color;
+    margin-top: 0.25rem;
+  }
+}

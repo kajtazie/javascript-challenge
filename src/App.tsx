@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Homepage } from "./pages/Homepage";
-import { EditContactPage } from "./pages/EditContactPage";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Homepage } from './pages/Homepage';
+import { EditContactPage } from './pages/EditContactPage';
 
 function App() {
   return (
-    <main className=" bg-gray-900">
+    <main>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
