@@ -1,33 +1,34 @@
 
 ## How to Run the Project
 
-#Clone the Repository
-``` git clone <repository-url> ```
-Navigate to the Project Directory
-bash
-Copy code
+### Clone the Repository
+``` 
+git clone <repository-url>
+```
+### Navigate to the Project Directory
+
+```
 cd javascript-challenge
-Install Dependencies
-bash
-Copy code
+```
+### Install Dependencies
+```
 npm install
-
-
-Start the Development Server
-bash
-Copy code
+```
+### Start the Development Server
+```
 npm run dev
+```
 The application will run on http://localhost:3000.
 
-Run Tests
-bash
-Copy code
+### Run Tests
+```
 npm run test
-Build for Production
-bash
-Copy code
-npm run build
+```
+### Build for Production
 
+```
+npm run build
+```
 
 ## Node.js Version Requirement
 
