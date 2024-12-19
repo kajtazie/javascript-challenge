@@ -1,10 +1,8 @@
 
 ## How to Run the Project
 
-Clone the Repository
-bash
-Copy code
-git clone <repository-url>
+#Clone the Repository
+``` git clone <repository-url> ```
 Navigate to the Project Directory
 bash
 Copy code
