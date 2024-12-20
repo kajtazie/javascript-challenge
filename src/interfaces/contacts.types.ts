@@ -13,3 +13,7 @@ export interface CountryOption {
   value: string;
   label: string;
 }
+
+export interface Contact {
+  contact: Contacts;
+}

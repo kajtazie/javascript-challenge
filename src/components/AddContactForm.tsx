@@ -4,6 +4,8 @@ import { useContacts } from "../hooks/useContacts";
 import useCountryOptions from "../hooks/useCountryOptions";
 import { useState } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
+import { Contacts } from "../interfaces/contacts.types";
+import { v4 as uuidv4 } from "uuid";
 
 type FormData = z.infer<typeof contactSchema>;
 
@@ -12,12 +14,13 @@ export const AddContactForm = ({
   addContact,
 }: {
   closeModal: () => void;
-  addContact: (contact: any) => void;
+  addContact: (contact: Contacts) => void;
 }) => {
   const { contacts } = useContacts();
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const countryOptions = useCountryOptions();
+
   const onSubmit = (data: FormData) => {
     const selectedCountry = countryOptions.find(
       (country) => country.value === data.country
@@ -39,14 +42,14 @@ export const AddContactForm = ({
       return;
     }
 
-    const newContact = {
+    const newContact: Contacts = {
+      id: uuidv4(),
       ...data,
       country: {
         code: selectedCountry.value,
         name: selectedCountry.label,
       },
     };
-
     addContact(newContact);
     setSuccessMessage("Contact added successfully!");
     setTimeout(() => {

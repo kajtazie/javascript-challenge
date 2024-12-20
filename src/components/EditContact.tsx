@@ -4,10 +4,12 @@ import { useContacts } from "../hooks/useContacts";
 import { useState } from "react";
 import useCountryOptions from "../hooks/useCountryOptions";
 import { ContactForm } from "./ContactForm/ContactForm";
+import { Contact } from "../interfaces/contacts.types";
 
 type FormData = z.infer<typeof contactSchema>;
 
-export const EditContact = ({ contact }: { contact: any }) => {
+
+export const EditContact = ({ contact }: Contact) => {
   const { editContact } = useContacts();
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const countryOptions = useCountryOptions();
